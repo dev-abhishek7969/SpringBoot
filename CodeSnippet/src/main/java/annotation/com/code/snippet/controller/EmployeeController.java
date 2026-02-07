@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
 
 
-//    @RequestMapping(path = "/getEmployee",method = RequestMethod.GET)
-//    @ResponseBody  --> Response of the api will not be a view but a body
+//  @RequestMapping(path = "/getEmployee",method = RequestMethod.GET)
+//  @ResponseBody  --> Response of the api will not be a view but a body
     @GetMapping("/addEmployee")
     public String getEmployee(){
         return "Employee";
@@ -24,7 +24,7 @@ public class EmployeeController {
         return "emp with id "+id;
     }
 
-//    @RequestMapping(path = "/addEmployee", method = RequestMethod.POST)
+//  @RequestMapping(path = "/addEmployee", method = RequestMethod.POST)
     @PostMapping("/addEmployee")
     public String addEmployee(Employee employee){
         return "added";
@@ -35,13 +35,13 @@ public class EmployeeController {
         return "added";
     }
 
-//    @RequestMapping(path = "/updateEmployee", method = RequestMethod.PUT)
+//  @RequestMapping(path = "/updateEmployee", method = RequestMethod.PUT)
     @PutMapping("/updateEmployee")
     public String updateEmployee(Employee employee){
         return "updated";
     }
 
-//    @RequestMapping(path = "/deleteEmployee", method = RequestMethod.DELETE)
+//  @RequestMapping(path = "/deleteEmployee", method = RequestMethod.DELETE)
     @DeleteMapping("/deleteEmployee")
     public String deleteEmployee(Employee employee){
         return "deleted";

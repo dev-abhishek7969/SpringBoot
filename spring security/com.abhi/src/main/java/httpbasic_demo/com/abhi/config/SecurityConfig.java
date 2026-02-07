@@ -17,7 +17,10 @@ public class SecurityConfig {
 				.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(authReq -> {
 					authReq
-						.requestMatchers("/api/user/register").permitAll()
+						.requestMatchers("/api/user/register").permitAll()						
+						.requestMatchers("/admin").hasRole("ADMIN")
+						.requestMatchers("/api/greet/update").hasAuthority("WRITE_PERM")
+						
 						.anyRequest().authenticated();
 				})
 				.httpBasic(Customizer.withDefaults())
